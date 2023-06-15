@@ -1,0 +1,7 @@
+Create Article
+<mc-article-form
+  [initialValues]="initialValues"
+  [isSubmitting]="isSubmitting$ | async"
+  [errors]="backandErrors$ | async"
+  (articleSubmit)="onSubmit($event)"
+></mc-article-form>
