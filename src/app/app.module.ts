@@ -9,7 +9,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { AppComponent } from 'src/app/app.component';
 import { AuthModule } from 'src/app/auth/auth.module';
 import { TopBarModule } from './shared/modules/topBar/topBar.module';
-import { PersistanceService } from './shared/services/persistance.servis';
+import { PersistanceService } from './shared/services/persistance.service';
 import { AuthInterceptor } from './shared/services/authinterceptor.service';
 import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';

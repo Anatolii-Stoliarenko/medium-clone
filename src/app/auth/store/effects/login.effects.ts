@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service';
 import { CurrentUserInterface } from 'src/app/shared/types/currentUser.interface';
-import { PersistanceService } from 'src/app/shared/services/persistance.servis';
+import { PersistanceService } from 'src/app/shared/services/persistance.service';
 import {
   loginAction,
   loginFailureAction,
@@ -40,7 +40,7 @@ export class LoginEffect {
       this.actions$.pipe(
         ofType(loginSuccessAction),
         tap(() => {
-          console.log('loginSuccess');
+          // console.log('loginSuccess');
           this.router.navigateByUrl('/');
         })
       ),

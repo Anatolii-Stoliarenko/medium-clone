@@ -12,7 +12,7 @@ import {
 } from '../actions/register.action';
 import { AuthService } from '../../services/auth.service';
 import { CurrentUserInterface } from 'src/app/shared/types/currentUser.interface';
-import { PersistanceService } from 'src/app/shared/services/persistance.servis';
+import { PersistanceService } from 'src/app/shared/services/persistance.service';
 
 @Injectable()
 export class RegisterEffect {
@@ -24,7 +24,7 @@ export class RegisterEffect {
         return this.authService.register(request).pipe(
           map((currentUser: CurrentUserInterface) => {
             // window.localStorage.setItem('accessToken', currentUser.token);
-            this.persistanceServise.set('accessToken', currentUser.token);
+            this.persistanceService.set('accessToken', currentUser.token);
             return registerSuccessAction({ currentUser });
           }),
           catchError((errorResponse: HttpErrorResponse) => {
@@ -52,7 +52,7 @@ export class RegisterEffect {
   constructor(
     private actions$: Actions,
     private authService: AuthService,
-    private persistanceServise: PersistanceService,
+    private persistanceService: PersistanceService,
     private router: Router
   ) {}
 }

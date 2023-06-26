@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { logoutAction } from '../actions/sync.action';
 import { tap } from 'rxjs';
-import { PersistanceService } from 'src/app/shared/services/persistance.servis';
+import { PersistanceService } from 'src/app/shared/services/persistance.service';
 import { Router } from '@angular/router';
 
 @Injectable()
