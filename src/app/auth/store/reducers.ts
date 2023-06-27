@@ -16,7 +16,7 @@ import {
   getCurrentUserSuccessAction,
 } from './actions/getCurrentUser.action';
 import { updateCurrentUserSuccessAction } from './actions/updateCurrentUser.action';
-import { logoutAction } from './actions/sync.action';
+import { logoutAction } from './actions/logout.action';
 
 const initialState: AuthStateInterface = {
   isSubmitting: false,

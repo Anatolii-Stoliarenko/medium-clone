@@ -11,7 +11,7 @@ import {
 } from '../store/selectors';
 import { updateCurrentUserAction } from 'src/app/auth/store/actions/updateCurrentUser.action';
 import { CurrentUserInputInterface } from 'src/app/shared/types/currentUserInput.interface';
-import { logoutAction } from 'src/app/auth/store/actions/sync.action';
+import { logoutAction } from 'src/app/auth/store/actions/logout.action';
 
 @Component({
   selector: 'mc-settings',
