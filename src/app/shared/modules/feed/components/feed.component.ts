@@ -35,6 +35,7 @@ export class FeedComponent implements OnInit, OnDestroy, OnChanges {
   baseUrl: string;
   queryParamsSubsrciption: Subscription;
   currentPage: number;
+  color: string = 'primary';
 
   constructor(
     private store: Store,

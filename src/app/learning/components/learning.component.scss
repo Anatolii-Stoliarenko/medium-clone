@@ -1,0 +1,38 @@
+// @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+// @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-h4 {
+  font-weight: bold;
+}
+.label {
+  font-weight: bold;
+}
+
+.example-small-box,
+.example-large-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.example-small-box {
+  height: auto;
+  width: 400px;
+}
+
+.example-large-box {
+  height: auto;
+  width: 330px;
+}
+
+::ng-deep.mat-tab-link {
+  color: black;
+  opacity: 1 !important;
+}

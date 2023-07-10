@@ -1,5 +1,23 @@
-<mc-loading *ngIf="isLoading$ | async"></mc-loading>
+<!-- <mc-loading *ngIf="isLoading$ | async"></mc-loading> -->
+<!-- <div class="loading-indicator">
+  <mat-spinner
+    [diameter]="50"
+    class="example-margin"
+    *ngIf="isLoading$ | async"
+    [mode]="'indeterminate'"
+  >
+  </mat-spinner>
+</div> -->
+<p></p>
+<div>
+  <mat-progress-bar
+    mode="indeterminate"
+    *ngIf="isLoading$ | async"
+  ></mat-progress-bar>
+</div>
+
 <mc-error-message *ngIf="error$ | async"></mc-error-message>
+
 <div *ngIf="feed$ | async">
   <mc-pagination
     [total]="(feed$ | async).articlesCount"

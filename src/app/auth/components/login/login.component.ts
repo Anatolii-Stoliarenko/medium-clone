@@ -41,8 +41,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log(`this.form.valid is:  ${this.form.valid}`);
-    // console.log(JSON.stringify(this.form.value));
     const request: LoginRequestInterface = {
       user: this.form.value,
     };

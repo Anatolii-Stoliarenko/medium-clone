@@ -1,4 +1,38 @@
-<div class="feed-toggle">
+<!-- navigation with mat-tab-group -->
+
+<nav mat-tab-nav-bar>
+  <a
+    mat-tab-link
+    [routerLink]="['/feed']"
+    routerLinkActive
+    #rla1="routerLinkActive"
+    [active]="rla1.isActive"
+    >Your feed
+  </a>
+  <a
+    mat-tab-link
+    [routerLink]="['/']"
+    routerLinkActive
+    [routerLinkActiveOptions]="{ exact: true }"
+    #rla2="routerLinkActive"
+    [active]="rla2.isActive"
+    >Global feed
+  </a>
+  <a
+    mat-tab-link
+    *ngIf="tagNameProps"
+    [routerLink]="['/tags', tagNameProps]"
+    routerLinkActive="active"
+    #rla3="routerLinkActive"
+    [active]="rla3.isActive"
+    >#
+    {{ tagNameProps }}
+  </a>
+</nav>
+
+<!-- simple navigation -->
+
+<!-- <div class="feed-toggle">
   <ul class="nav nav-pills outline-active">
     <li class="nav-item" *ngIf="isLoggedIn$ | async">
       <a [routerLink]="['/feed']" class="nav-link" routerLinkActive="active"
@@ -26,6 +60,6 @@
       </a>
     </li>
   </ul>
-</div>
+</div> -->
 
 <!-- [routerLinkActiveOptions]="{ exact: true, __hack__: tagNameProps }" -->

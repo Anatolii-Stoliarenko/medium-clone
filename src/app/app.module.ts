@@ -20,6 +20,8 @@ import { CreateArticleModule } from './createArticle/createArticle.module';
 import { EditArticleModule } from './editArticle/editArticle.module';
 import { SettingsModdule } from './settings/settings.module';
 import { UserProfileModule } from './userProfile/userProfile.module';
+import { LearningModdule } from './learning/learning.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +29,7 @@ import { UserProfileModule } from './userProfile/userProfile.module';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    MatProgressSpinnerModule,
     HttpClientModule,
     TopBarModule,
     GlobalFeedModule,
@@ -44,6 +47,7 @@ import { UserProfileModule } from './userProfile/userProfile.module';
     }),
     StoreRouterConnectingModule.forRoot(),
     UserProfileModule,
+    LearningModdule,
   ],
   providers: [
     PersistanceService,

@@ -1,0 +1,141 @@
+<!-- navigation with mat-tab-group -->
+
+<mat-tab-group dynamicHeight>
+  <mat-tab label="Progress spinner">
+    <div class="example-small-box mat-elevation-z4">
+      <!-- Spiner -->
+      <mat-card class="example-card">
+        <mat-card-content>
+          <h4 class="example-h4">Progress spinner configuration</h4>
+          <!--  <mat-radio-group [(ngModel)]="showSpiner">
+            <mat-radio-button [value]="true"> Show </mat-radio-button>
+            <mat-radio-button [value]="false"> Hide </mat-radio-button>
+          </mat-radio-group> -->
+          <!--  <div *ngIf="showSpiner"> -->
+          <mat-card class="example-card">
+            <mat-card-content>
+              <section class="example-section">
+                <label class="label">Color:</label>
+                <mat-radio-group [(ngModel)]="color">
+                  <mat-radio-button value="primary"> Primary </mat-radio-button>
+                  <mat-radio-button value="accent"> Accent </mat-radio-button>
+                  <mat-radio-button value="warn"> Warn </mat-radio-button>
+                </mat-radio-group>
+              </section>
+
+              <section class="example-section">
+                <label class="label">Mode:</label>
+                <mat-radio-group [(ngModel)]="mode">
+                  <mat-radio-button value="determinate">
+                    Determinate
+                  </mat-radio-button>
+                  <mat-radio-button value="indeterminate">
+                    Indeterminate
+                  </mat-radio-button>
+                </mat-radio-group>
+              </section>
+
+              <section class="example-section" *ngIf="mode === 'determinate'">
+                <label class="label">Size spiner: </label>
+                &nbsp;
+                <mat-slider min="10" max="200" step="1" discrete>
+                  <input
+                    type="range"
+                    [(ngModel)]="sizeOfSpiner"
+                    matSliderThumb
+                  />
+                </mat-slider>
+                &nbsp;
+                <label> {{ sizeOfSpiner }}</label>
+              </section>
+
+              <section class="example-section" *ngIf="mode === 'determinate'">
+                <label class="label">Progress: </label>
+                &nbsp;
+                <mat-slider discrete>
+                  <input type="range" [(ngModel)]="value" matSliderThumb />
+                </mat-slider>
+                &nbsp;
+                <label> {{ value }}</label>
+              </section>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card class="example-card">
+            <mat-card-content>
+              <h2 class="example-h2">Result</h2>
+
+              <mat-progress-spinner
+                [diameter]="sizeOfSpiner"
+                [color]="color"
+                [mode]="mode"
+                [value]="value"
+              >
+              </mat-progress-spinner>
+            </mat-card-content>
+          </mat-card>
+          <!-- </div> -->
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Dialog">
+    <div class="example-large-box mat-elevation-z4">
+      <!-- Dialog -->
+      <mat-card class="example-card">
+        <mat-card-content>
+          <h4 class="example-h4">Dialog</h4>
+          <section>
+            <!--  <mat-radio-group [(ngModel)]="showDialog">
+              <mat-radio-button [value]="true"> Show </mat-radio-button>
+              <mat-radio-button [value]="false"> Hide </mat-radio-button>
+            </mat-radio-group> -->
+
+            <!--  <div *ngIf="showDialog"> -->
+            <ul class="my-list">
+              <li>
+                <mat-form-field>
+                  <mat-label>What's your name?</mat-label>
+                  <input matInput [(ngModel)]="name" #inputName />
+                </mat-form-field>
+              </li>
+              <li>
+                <mat-form-field>
+                  <mat-label>How old are you?</mat-label>
+                  <input matInput type="number" [(ngModel)]="age" />
+                </mat-form-field>
+              </li>
+              <li>
+                <div class="example-button-row">
+                  <button
+                    mat-raised-button
+                    matTooltip="Open dialog window"
+                    class="dialogButton"
+                    (click)="openDialog()"
+                  >
+                    Go
+                  </button>
+                  <button
+                    color="warn"
+                    [disabled]="inputName.value === '' && !animal && !age"
+                    class="dialogButton"
+                    mat-raised-button
+                    (click)="reset()"
+                  >
+                    Reset
+                  </button>
+                </div>
+              </li>
+              <li *ngIf="animal">
+                You chose: <em>{{ animal }}</em>
+              </li>
+            </ul>
+            <!--  </div> -->
+          </section>
+        </mat-card-content>
+      </mat-card>
+      <!-- <mat-divider [inset]="true"></mat-divider> -->
+      <mat-divider [vertical]="true"></mat-divider>
+    </div>
+  </mat-tab>
+</mat-tab-group>
