@@ -1,4 +1,4 @@
-<!-- <mc-loading *ngIf="isLoading$ | async"></mc-loading> -->
+<mc-loading *ngIf="isLoading$ | async"></mc-loading>
 <!-- <div class="loading-indicator">
   <mat-spinner
     [diameter]="50"
@@ -9,22 +9,22 @@
   </mat-spinner>
 </div> -->
 <p></p>
-<div>
+<!-- <div>
   <mat-progress-bar
     mode="indeterminate"
     *ngIf="isLoading$ | async"
   ></mat-progress-bar>
-</div>
+</div> -->
 
 <mc-error-message *ngIf="error$ | async"></mc-error-message>
 
 <div *ngIf="feed$ | async">
-  <mc-pagination
+  <!-- <mc-pagination
     [total]="(feed$ | async).articlesCount"
     [limit]="limit"
     [url]="baseUrl"
     [currentPage]="currentPage"
-  ></mc-pagination>
+  ></mc-pagination> -->
   <!-- ? Elvis operator permit contitue porgram even field is empty -->
   <div
     class="article-preview"
